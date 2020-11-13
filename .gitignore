@@ -8,6 +8,7 @@ Grabber.py
 sudoku.py
 sudoku_backup.py
 resize.py
+qwe.py
 .idea/
 __pycache__/
 venv/

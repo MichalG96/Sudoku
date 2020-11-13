@@ -392,7 +392,6 @@ warped_text = np.array([0])
 i = 0
 print(f'frame area : {frame_area}')
 
-
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 
@@ -452,7 +451,7 @@ while True:
 
     cv2.imshow('Corners', grabbed_board.img_to_paint_on)
     cv2.imshow('Warped', grabbed_board.img_warped)
-    combined_movie.write(grabbed_board.img_warped)
+    # combined_movie.write(grabbed_board.img_warped)
 
     cv2.imshow('Grid extracted', grid_extracted)
 
