@@ -1,0 +1,16 @@
+brudnopis.py
+video.py
+sentdex_tut.py
+paint_test.py
+newnames.py
+sudoku_GUI.py
+Grabber.py
+sudoku.py
+sudoku_backup.py
+resize.py
+.idea/
+__pycache__/
+venv/
+tests/
+thrash/
+*.avi
