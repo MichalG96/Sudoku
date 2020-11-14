@@ -399,7 +399,9 @@ frame_height = int(cap.get(4))
 # combined_movie = cv2.VideoWriter('combined.avi', cv2.VideoWriter_fourcc(*'MJPG'), 20, size_wide)
 
 while True:
-    ret, frame = cap.read()
+    # ret, frame = cap.read()
+    frame = img = cv2.imread('sudoku_puzzles/pretty_ones/148.jpg')
+
     # frame = np.rot90(frame, k=3)      # Some non-native webcam software rotates the camera image, uncomment to compensate for that
     grabbed_board = Grabber(frame, nn_model)
     pre_processed = grabbed_board.pre_process()
@@ -451,6 +453,8 @@ while True:
 
     cv2.imshow('Corners', grabbed_board.img_to_paint_on)
     cv2.imshow('Warped', grabbed_board.img_warped)
+    cv2.imwrite('docu/warped.png', grabbed_board.img_warped)
+
     # combined_movie.write(grabbed_board.img_warped)
 
     cv2.imshow('Grid extracted', grid_extracted)
@@ -459,7 +463,8 @@ while True:
         warped_text = draw_on_warped(recognized_board, solved_board, grabbed_board.img_warped)
 
     except NameError:
-        print('Board is yet to be recognized')
+        pass
+        # print('Board is yet to be recognized')
 
     if warped_text.size > 1:
         unwarped = unwarp(warped_text, grabbed_board.trans_matrix, grabbed_board.img)
