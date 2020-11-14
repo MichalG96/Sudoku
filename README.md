@@ -1,3 +1,4 @@
+
 ## Introduction
 
 
@@ -11,6 +12,7 @@
 ## Requirements
 
 Python 3.5-3.8 (Tensorflow doesn't support Python 3.9 for now) 
+Webcam (or some different camera connected to the computer, serving as a webcam)
 
 ## Setup
 
@@ -21,7 +23,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-After installing the dependecies, simply get yourself a sudoku, run 
+After installing the dependecies, simply get yourself a sudoku puzzle, run: 
 ```
 python sudoku_video.py
 ```
@@ -33,29 +35,29 @@ This is an example image, to show how the image is being processed:
 
 ![Original photo](readme_imgs/original.png)
 
-
-
 The first task is finding the edges of the sudoku board. The image is converted to grayscale, and then, couple of filters are being applied:
 
 * bilateral filter smoothens the white spaces:
 
 ![With bilateral filter](readme_imgs/gray_bilateral.png)
 
-
 * Canny filter enables to detect edges:
 
 ![With Canny filter](readme_imgs/edges.png)
 
-
 Then, the findContours function is used, and the contour with the largest area is set to be searched board:
 
-readme_imgs/roi.png
+![Roi](readme_imgs/roi.jpg)
 
 warpPerspective function allows us to get to transform the image so that it is not distorted, it looks as if we were looking at it straight from the above:
 
-[warped]
+![warped](readme_imgs/warped.png)
 
 In order to get rid of the grid, the image is thresholded, and erode and dilate functions are used to extract vertical and horizontal lines, which are then subtracted from the image
+
+
+
+![threshold](readme_imgs/thresh.jpg) - ![ver](readme_imgs/ver.jpg) - ![hor](readme_imgs/hor.jpg) =  ![digits](readme_imgs/digits.jpg) 
 
 [thresh] - [ver] - [hor] = [digits]
 
