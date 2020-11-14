@@ -396,10 +396,10 @@ print(f'frame area : {frame_area}')
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 
-size = (frame_width, frame_height)
-size_wide = (2*frame_width, frame_height)
-combined_movie = cv2.VideoWriter('combined.avi', cv2.VideoWriter_fourcc(*'MJPG'), 20, size_wide)
-recognition_movie = cv2.VideoWriter('recognition.avi', cv2.VideoWriter_fourcc(*'MJPG'), 20, size)
+# size = (frame_width, frame_height)
+# size_wide = (2*frame_width, frame_height)
+# combined_movie = cv2.VideoWriter('combined.avi', cv2.VideoWriter_fourcc(*'MJPG'), 20, size_wide)
+# recognition_movie = cv2.VideoWriter('recognition.avi', cv2.VideoWriter_fourcc(*'MJPG'), 20, size)
 
 while True:
     ret, frame = cap.read()
@@ -453,7 +453,7 @@ while True:
     grid_extracted = grabbed_board.eliminate_grid_lines()
 
     cv2.imshow('Corners', grabbed_board.img_to_paint_on)
-    recognition_movie.write(grabbed_board.img_to_paint_on)
+    # recognition_movie.write(grabbed_board.img_to_paint_on)
     cv2.imshow('Warped', grabbed_board.img_warped)
     cv2.imshow('Grid extracted', grid_extracted)
 
@@ -472,7 +472,7 @@ while True:
         cv2.imshow('Grid extracted', grid_extracted)
 
         # Save video
-        combined_movie.write(combined)
+        # combined_movie.write(combined)
 
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
