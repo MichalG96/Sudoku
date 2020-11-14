@@ -31,7 +31,9 @@ and have fun. The program will use your default system webcam. In order to be re
 
 This is an example image, to show how the image is being processed:
 
-[original]
+![Original photo](readme_imgs/original.png)
+
+
 
 The first task is finding the edges of the sudoku board. The image is converted to grayscale, and then, couple of filters are being applied:
 
