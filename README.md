@@ -39,15 +39,17 @@ The first task is finding the edges of the sudoku board. The image is converted 
 
 * bilateral filter smoothens the white spaces:
 
-[gray_bilateral]
+![With bilateral filter](readme_imgs/gray_bilateral.png)
+
 
 * Canny filter enables to detect edges:
 
-[edges]
+![With Canny filter](readme_imgs/edges.png)
+
 
 Then, the findContours function is used, and the contour with the largest area is set to be searched board:
 
-[roi]
+readme_imgs/roi.png
 
 warpPerspective function allows us to get to transform the image so that it is not distorted, it looks as if we were looking at it straight from the above:
 
