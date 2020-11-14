@@ -61,6 +61,8 @@ x, y = unison_shuffling(x, y)
 ind_train = np.argsort(y_train_mnist)
 ind_test = np.argsort(y_test_mnist)
 
+# First 6000 samples of training dataset, and 1000 samples of testing dataset
+# contain zeros, which we don't need
 x_train_mnist = x_train_mnist[ind_train][6000:]
 y_train_mnist = y_train_mnist[ind_train][6000:]
 x_test_mnist = x_test_mnist[ind_test][1000:]
